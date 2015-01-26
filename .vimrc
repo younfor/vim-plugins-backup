@@ -1,6 +1,7 @@
 set nu "显示行数
 set shortmess=atI 
 set cursorline "突出当前行
+
 "自动缩进
 set autoindent
 set tabstop=4  
@@ -21,34 +22,35 @@ set foldclose=all           " 设置为自动关闭折叠
 
 nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 
-                            " 用空格键来开关折叠
+" 用空格键来开关折叠
 
 "vundle
 set nocompatible               " be iMproved
 filetype off                   " required!
- 
+
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
-  
- " let Vundle manage Vundle
- " required!
+
+" let Vundle manage Vundle
+" required!
 Bundle 'gmarik/vundle'
-  
+
 " My Bundles here:
 "
 " original repos on github
-Bundle 'tpope/vim-fugitive'
+"Bundle 'tpope/vim-fugitive'
+Bundle 'altercation/vim-colors-solarized'
 Bundle 'Lokaltog/vim-easymotion'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-Bundle 'tpope/vim-rails.git'
+"Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+"Bundle 'tpope/vim-rails.git'
 Bundle 'Valloric/YouCompleteMe'
 " vim-scripts repos
-Bundle 'L9'
-Bundle 'FuzzyFinder'
+"Bundle 'L9'
+"Bundle 'FuzzyFinder'
 " non github repos
 "Bundle 'git://git.wincent.com/command-t.git'
 " ...
-  
+
 filetype plugin indent on     " required!
 "
 " Brief help  -- 此处后面都是vundle的使用命令
@@ -80,7 +82,7 @@ let Tlist_Exit_OnlyWindow=1
 ""let g:winManagerWindowLayout = "BufExplorer,FileExplorer|TagList"
 
 "let g:winManagerWindowLayout = "TagList|FileExplorer,BufExplorer"
-let g:winManagerWindowLayout = "TagList|FileExplorer"
+let g:winManagerWindowLayout = "BufExplorer|FileExplorer"
 
 
 "设置winmanager的宽度，默认为25
@@ -92,3 +94,14 @@ let g:winManagerWindowLayout = "TagList|FileExplorer"
 ""定义打开关闭winmanager按键
 
 nmap <silent> <F8> :WMToggle<cr>
+"主题颜色
+syntax enable
+"if has('gui_running')
+"set background=light
+"else
+set background=dark
+"endif
+"colorscheme desert
+colorscheme solarized
+let g:solarized_termcolors=256
+set t_Co=256
